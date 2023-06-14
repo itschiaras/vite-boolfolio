@@ -5,7 +5,7 @@
     <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
         <section class="section bg-custom-gray" id="portfolio">
             <div class="container">
-                <h1 class="mb-5"><span class="text-danger">My</span> Portfolio</h1>
+                <h1 class="mb-5"><span class="text-danger">My</span> Projects</h1>
                 <div class="portfolio">
                     <div class="filters">
                         <a href="#" data-filter=".new" class="active">
