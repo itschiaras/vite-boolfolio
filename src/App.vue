@@ -1,49 +1,13 @@
 <template>
-  <div class="container">
-    <h1>{{ title }}</h1>
-    <div class="row">
-      <div class="col col-4 gap-3" v-for="(project, index) in projects">
-        <div class="card">
-          <img :src="project.image" :alt="project.title" class="img-fluid">
-          <div class="card-body">
-            <div class="card-title">
-              <h3>{{ project.title }}</h3>
-            </div>
-            <div class="card-text">
-              <p>{{ project.description }}</p>
-              <p> {{ project.type.name }}</p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    <HeaderApp/>
+    <router-view></router-view>
 </template>
 
 <script>
-import axios from 'axios';
+import HeaderApp from './components/HeaderApp.vue';
 export default {
-  'name' : 'App',
-  data() {
-    return {
-      title: 'My Projects',
-      projects: [],
-      apiUrl: 'http://127.0.0.1:8000/api',
-      img_path: 'http://127.0.0.1:8000/storage/'
-    }
-  },
-  methods: {
-    getData() {
-      axios.get(`${this.apiUrl}/projects`).then((res) =>{
-        console.log(res);
-        this.projects = res.data.results;
-      })
-    }
-  },
-  mounted() {
-    this.getData();
-  }
+    name: "App",
+    components: { HeaderApp }
 }
 </script>
 
