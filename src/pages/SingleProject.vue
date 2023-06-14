@@ -6,18 +6,18 @@
 
 <script>
 import axios from 'axios';
+import { store } from '../store';
 export default {
     name: 'SingleProject',
     data() {
         return {
+            store,
             product: null,
-            apiUrl: 'http://127.0.0.1:8000/api',
-            img_path: 'http://127.0.0.1:8000/storage/'
         }
     },
     methods: {
         getProject() {
-            axios.get(`${this.apiUrl}/projects/${this.$route.params.slug}`).then((res) => {
+            axios.get(`${store.apiURL}/projects/${this.$route.params.slug}`).then((res) => {
                 if (res.data.success) {
                     this.product = res.data.results;
                 } 
